@@ -4,7 +4,7 @@ node_modules
 coverage
 
 # Ficheros de tokens y claves
-src/services/PlantsService/PlantsServiceToken.js
+src/services/PlantsService/PlantsServiceConfig.js
 
 
 # local env files
