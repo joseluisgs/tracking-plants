@@ -40,7 +40,7 @@
   },
   "gitHooks": {
     "pre-commit": "lint-staged && npm run lint",
-    "pre-push": "npm test:unit"
+    "pre-push": "npm run test:unit"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
