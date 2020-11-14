@@ -1,5 +1,5 @@
 # tracking-plants
-App realizada con Vue para poder realizar el mejor cuidado de tus plantas. Otro Ejemplo de usar Vue + Firebase con Tailwind CSS
+Web App realizada con Vue para poder realizar el mejor cuidado de tus plantas. Otro Ejemplo de usar Vue + Firebase con Tailwind CSS, Jest y otras tecnologías.
 
 ## Project setup
 ```
