@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <ListPlants />
+    <h1>Hola</h1>
   </div>
 </template>
 

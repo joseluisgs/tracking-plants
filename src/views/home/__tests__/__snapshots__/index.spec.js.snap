@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Home View should match snapshot 1`] = `
+exports[`Test Home View Debería ser igual a su Snapshot 1`] = `
 <div
   class="home"
 >
   <listplants-stub />
+   
+  <h1>
+    Hola
+  </h1>
 </div>
 `;

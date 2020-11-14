@@ -13,7 +13,7 @@ describe('Test Home View', () => {
   };
 
   //
-  test('should match snapshot', () => {
+  test('Debería ser igual a su Snapshot', () => {
     const { wrapper } = build();
     // El elemento debe coicidir con la copia montada
     expect(wrapper.element).toMatchSnapshot();
