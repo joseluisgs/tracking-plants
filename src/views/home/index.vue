@@ -9,7 +9,7 @@
 import ListPlants from '@/components/ui/ListPlants.vue';
 
 export default {
-  name: 'Home',
+  name: 'HomeView',
   components: {
     ListPlants,
   },
