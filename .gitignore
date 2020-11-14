@@ -3,6 +3,9 @@ node_modules
 /dist
 coverage
 
+# Ficheros de tokens y claves
+src/services/PlantsService/PlantsServiceToken.js
+
 
 # local env files
 .env.local
@@ -22,4 +25,5 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
 

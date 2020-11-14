@@ -26,7 +26,6 @@ export default {
       if (this.itemSelected.length >= 3) {
       // Emitimos el evento de buscar que se llamará inpu y devolverá el valor event
         this.$emit('input', this.itemSelected);
-        // console.log(`Autocomplete Value: ${this.itemSelected}`);
       }
     },
   },
