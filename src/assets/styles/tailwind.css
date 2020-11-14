@@ -1,0 +1,4 @@
+/* Instalamos la base de tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

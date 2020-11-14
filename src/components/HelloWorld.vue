@@ -5,6 +5,9 @@
       Web App realizada con Vue para poder realizar el mejor cuidado de tus plantas.<br>
       Otro Ejemplo de usar Vue + Firebase con Tailwind CSS, Jest, Axios REST y otras tecnologías.
     </p>
+    <p>Probando Tailwind</p>
+    <button class="border rounded bg-green-600 text-white" >Mi Boton</button>
+
   </div>
 </template>
 
