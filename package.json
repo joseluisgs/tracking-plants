@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
+    "test": "npm run test:unit",
+    "test:unit": "vue-cli-service test:unit --coverage",
+    "test:watch": "vue-cli-service test:unit --coverage --watch",
     "lint": "vue-cli-service lint --no-fix",
     "lint:fix": "vue-cli-service lint --fix"
   },
@@ -37,7 +39,8 @@
     "vue-template-compiler": "^2.6.11"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged && npm run lint"
+    "pre-commit": "lint-staged && npm run lint",
+    "pre-push": "npm run test:unit"
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [
