@@ -19,6 +19,7 @@ export default {
   name: 'ListPlants',
   methods: {
     goToAddPlant() {
+      // navegamos a...
       this.$router.push({ name: 'AddPlant' });
     },
   },

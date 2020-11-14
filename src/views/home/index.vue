@@ -6,7 +6,7 @@
 
 <script>
 // @ is an alias to /src
-import ListPlants from '@/components/ui/ListPlants.vue';
+import ListPlants from '@/views/home/components/ListPlants.vue';
 
 export default {
   name: 'HomeView',
