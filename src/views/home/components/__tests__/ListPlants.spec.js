@@ -1,8 +1,12 @@
 import { shallowMount } from '@vue/test-utils';
 import ListPlants from '../ListPlants.vue';
 
+// Vamos a hacer un mock del router para jugar con los parámetros
+// y no usar una copia directa
+// https://vue-test-utils.vuejs.org/guides/#using-with-vue-router
 // Teteamos su componente
 describe('Vista: HomeView -> Componente: ListPlants', () => {
+  // Indicamos que es una función ficticia.
   const $router = {
     push: jest.fn(),
   };
@@ -10,6 +14,7 @@ describe('Vista: HomeView -> Componente: ListPlants', () => {
   // Crea el shallowMount
   const build = () => {
     const wrapper = shallowMount(ListPlants, {
+
       mocks: {
         $router,
       },
