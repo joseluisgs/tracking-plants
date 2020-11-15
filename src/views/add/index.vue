@@ -22,7 +22,7 @@
 
 <script>
 import Autocomplete from '@/components/ui/Autocomplete.vue';
-import PlantsService from '@/services/PlantsService';
+import PlantsService from '@/services/PlantsService/Plants';
 import { mapActions } from 'vuex';
 
 export default {

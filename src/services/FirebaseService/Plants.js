@@ -11,6 +11,7 @@ export default {
       slug: payload.slug,
       links: payload.links,
       image: payload.image,
+      date: Date.now(),
     });
     return res;
   },
