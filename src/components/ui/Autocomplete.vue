@@ -3,12 +3,19 @@
     <div>
       <input
         type="text"
-        class="border py-1 px-1 rounded w-full focus:outline-none"
+        class="name-autocomplete border py-1 px-1 rounded w-full focus:outline-none"
         v-model="itemSelected"
         @input="changeInputValue"
       />
     </div>
-    <div></div>
+    <div class="border">
+      <span v-for="item in items"
+        :key="item.id"
+        class="block cursor-pointer capitalize py-1 px-1 hover:font-bold hover:bg-gray-200"
+      >
+        {{item.name}}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -19,18 +26,27 @@ export default {
   data: () => ({
     itemSelected: '',
   }),
+  // Mis propiedadees para iniciarme
+  props: {
+    items: {
+      type: Array,
+      default: () => [],
+    },
+  },
   // Mis métodos
   methods: {
     changeInputValue() {
-      // Para evitar muchas búsquedas lo hacemos con el valor mayor a 3
-      if (this.itemSelected.length >= 3) {
       // Emitimos el evento de buscar que se llamará inpu y devolverá el valor event
-        this.$emit('input', this.itemSelected);
-      }
+      this.$emit('input', this.itemSelected);
     },
   },
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.name-autocomplete {
+  &::placeholder {
+    text-transform: initial;
+  }
+}
 </style>

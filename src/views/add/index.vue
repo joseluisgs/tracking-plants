@@ -5,7 +5,7 @@
       <!-- Recibe el evento llamado input de autocomplete -->
       <Autocomplete
         @input="onChangeAutocomplete"
-        :plants = "plants"
+        :items = "plants"
       />
       <div class="flex justify-center mt-8">
         <button class="border rounded py-2 px-6 bg-green-600 text-white font-bold">Guardar</button>
@@ -31,9 +31,12 @@ export default {
   methods: {
     async onChangeAutocomplete(value) {
       // Llamamos a la api
-      console.log(value);
-      this.plants = await PlantsService.findPlant(value);
-      console.log(this.plants);
+      if (value.length >= 3) {
+        this.plants = await PlantsService.findPlant(value);
+        console.log(this.plants);
+        return;
+      }
+      this.plants = [];
     },
   },
 };

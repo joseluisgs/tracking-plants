@@ -26,6 +26,7 @@ export default {
       q: name,
       complete_data: true,
       page_size: 10,
+      'filter_not[common_name]': 'null',
     };
     try {
       const response = await Service.get(`${API_BASE_URL}search`, { params });
