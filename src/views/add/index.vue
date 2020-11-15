@@ -6,6 +6,7 @@
       <Autocomplete
         @input="onChangeAutocomplete"
         :items = "plants"
+        @select-item="onSelectItem"
       />
       <div class="flex justify-center mt-8">
         <button class="border rounded py-2 px-6 bg-green-600 text-white font-bold">Guardar</button>
@@ -26,6 +27,8 @@ export default {
   // Mi modelo
   data: () => ({
     plants: null,
+    currentPlant: null,
+    // autocompleteValue: null,
   }),
   // Mis métodos
   methods: {
@@ -33,9 +36,18 @@ export default {
       // Llamamos a la api
       if (value.length >= 3) {
         this.plants = await PlantsService.findPlant(value);
-        console.log(this.plants);
+        // console.log(this.plants);
         return;
       }
+      this.clearItems();
+    },
+    onSelectItem(item) {
+      console.log(item);
+      // this.autocompleteValue = item.name;
+      this.currentPlant = item;
+      this.clearItems();
+    },
+    clearItems() {
       this.plants = [];
     },
   },
