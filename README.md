@@ -65,6 +65,15 @@ Ver [Referencias de configuración](https://cli.vuejs.org/config/).
 
 Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twitter.com/joseluisgonsan)
 
+<!-- Contributors list - Do not remove or modify this section -->
+<table>
+  <tr>
+    <td align="center"><a href="https://twitter.com/joseluisgonsan"><img src="https://pbs.twimg.com/profile_images/1164967571579396096/YXMN71A1_400x400.jpg" width="100px;"/><br /><sub><b>joseluisgs</b></a> <a href="https://github.com/joseluisgs" title="Code">💻</a></sub></td>
+    <td></td>
+  </tr>
+</table>
+
+
 ![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social) ![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)
 
 ## Licencia

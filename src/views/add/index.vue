@@ -61,8 +61,8 @@ export default {
       this.plants = [];
     },
     onSubmit() {
-      console.log(`Elemento: ${this.currentPlant.name}`);
       this.savePlant(this.currentPlant);
+      console.log(`Planta ${this.currentPlant.name} salvado :)`);
     },
   },
 };
