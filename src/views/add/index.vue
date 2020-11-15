@@ -15,6 +15,7 @@
 
 <script>
 import Autocomplete from '@/components/ui/Autocomplete.vue';
+import PlantsService from '@/services/PlantsService';
 
 export default {
   name: 'AddView',
@@ -23,9 +24,11 @@ export default {
   },
   // Mis métodos
   methods: {
-    onChangeAutocomplete(value) {
+    async onChangeAutocomplete(value) {
       // Llamamos a la api
       console.log(value);
+      const data = await PlantsService.findPlant(value);
+      console.log(data.data);
     },
   },
 };

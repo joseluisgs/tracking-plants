@@ -12,7 +12,7 @@ Mobile Web App (PWA) realizada con Vue para poder realizar el mejor cuidado de t
 
 Este es un proyecto para tarbajar distintos conceptos como REST, Firebase usando VueJS y como CSS Tailwind, con el objetivo de profundizar en los mismos trabajando además distintos test unitarios usando Jest sobre los componentes de VueJS.
 
-El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plantas. Además consultamos la platas desde la API de [Trefle](https://trefle.io/).
+El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plantas. Además consultamos la platas desde la API de [Trefle](https://trefle.io/) usando [Axios](https://github.com/axios/axios). Para evitar el error pro acceso local se ha usado la extensión de [CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es) de Chrome.
 
 ## Tecnología susadas
 
@@ -22,6 +22,8 @@ El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plan
 - [Jest](https://jestjs.io/es-ES/)
 - [Vue Test Utils](https://vue-test-utils.vuejs.org/)
 - [Trefle](https://trefle.io/)
+- [Axios](https://github.com/axios/axios)
+- [CORS Chroem Extensión](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es)
 
 ## Funcionamiento con npm:
 
