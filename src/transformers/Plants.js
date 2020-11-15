@@ -1,14 +1,14 @@
 import BaseTransformer from './Base';
-
+// Transformamos los datos quedándonos con los datos que queramos
 class PlantsTransformer extends BaseTransformer {
   static fetch(plant) {
     return {
-      name: plant.common_name,
-      completeData: plant.complete_data,
       id: plant.id,
-      link: plant.link,
-      scientificName: plant.scientific_name,
+      name: plant.common_name,
       slug: plant.slug,
+      scientificName: plant.scientific_name,
+      links: plant.links,
+      image: plant.image_url,
     };
   }
 }

@@ -5,6 +5,7 @@
       <!-- Recibe el evento llamado input de autocomplete -->
       <Autocomplete
         @input="onChangeAutocomplete"
+        :plants = "plants"
       />
       <div class="flex justify-center mt-8">
         <button class="border rounded py-2 px-6 bg-green-600 text-white font-bold">Guardar</button>
