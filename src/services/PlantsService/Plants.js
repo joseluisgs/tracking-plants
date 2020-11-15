@@ -1,7 +1,7 @@
 import PlantsTransformer from '@/transformers/Plants';
-import Axios from './index';
+import http from './index';
 
-const { Service } = Axios;
+const { Service } = http;
 
 export default {
   // Buscamos una planta
