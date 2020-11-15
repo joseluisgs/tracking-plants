@@ -23,6 +23,7 @@
 <script>
 import Autocomplete from '@/components/ui/Autocomplete.vue';
 import PlantsService from '@/services/PlantsService';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'AddView',
@@ -37,6 +38,10 @@ export default {
   }),
   // Mis métodos
   methods: {
+    // Acciones de Vuex
+    ...mapActions({
+      savePlant: 'plants/savePlant',
+    }),
     async onChangeAutocomplete(value) {
       // Llamamos a la api
       if (value.length >= 3) {
@@ -57,6 +62,7 @@ export default {
     },
     onSubmit() {
       console.log(`Elemento: ${this.currentPlant.name}`);
+      this.savePlant(this.currentPlant);
     },
   },
 };

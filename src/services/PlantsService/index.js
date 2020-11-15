@@ -17,6 +17,7 @@ const Service = Axios.create({
 Service.defaults.headers.common.Accept = 'application/json';
 Service.defaults.headers.common['Content-Type'] = 'application/json';
 Service.defaults.headers.common.Authorization = `Bearer ${Config.API_TOKEN}`;
+Service.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
 export default {
   // Buscamos una planta
