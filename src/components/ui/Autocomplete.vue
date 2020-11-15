@@ -3,18 +3,19 @@
     <div>
       <input
         type="text"
-        class="name-autocomplete border py-1 px-1 rounded w-full focus:outline-none"
+        class="name-autocomplete border py-1 px-1 rounded w-full capitalize focus:outline-none"
         v-model="itemSelected"
         @input="changeInputValue"
       />
     </div>
     <div class="border">
-      <span v-for="item in items"
+      <span
+        v-for="item in items"
         :key="item.id"
         class="block cursor-pointer capitalize py-1 px-1 hover:font-bold hover:bg-gray-200"
         @click="selectItem(item)"
       >
-        {{item.name}}
+        {{ item.name }}
       </span>
     </div>
   </div>
@@ -26,7 +27,6 @@ export default {
   // Mis datos del modelo
   data: () => ({
     itemSelected: '',
-    itemClicked: '',
   }),
   // Mis propiedadees para iniciarme
   props: {

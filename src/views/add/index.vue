@@ -1,15 +1,20 @@
 <template>
   <section>
     <h1 class="font-bold text-2xl">Nueva Planta</h1>
-    <form class="mt-8">
+    <form class="mt-8" @submit.prevent="onSubmit">
       <!-- Recibe el evento llamado input de autocomplete -->
       <Autocomplete
         @input="onChangeAutocomplete"
-        :items = "plants"
+        :items="plants"
         @select-item="onSelectItem"
       />
       <div class="flex justify-center mt-8">
-        <button class="border rounded py-2 px-6 bg-green-600 text-white font-bold">Guardar</button>
+        <button
+          class="border rounded py-2 px-6 bg-green-600 text-white font-bold"
+          type="submit"
+        >
+          Guardar
+        </button>
       </div>
     </form>
   </section>
@@ -42,7 +47,7 @@ export default {
       this.clearItems();
     },
     onSelectItem(item) {
-      console.log(item);
+      // console.log(item);
       // this.autocompleteValue = item.name;
       this.currentPlant = item;
       this.clearItems();
@@ -50,10 +55,12 @@ export default {
     clearItems() {
       this.plants = [];
     },
+    onSubmit() {
+      console.log(`Elemento: ${this.currentPlant.name}`);
+    },
   },
 };
 </script>
 
 <style>
-
 </style>
