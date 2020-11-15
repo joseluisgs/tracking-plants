@@ -22,13 +22,17 @@ export default {
   components: {
     Autocomplete,
   },
+  // Mi modelo
+  data: () => ({
+    plants: null,
+  }),
   // Mis métodos
   methods: {
     async onChangeAutocomplete(value) {
       // Llamamos a la api
       console.log(value);
-      const data = await PlantsService.findPlant(value);
-      console.log(data.data);
+      this.plants = await PlantsService.findPlant(value);
+      console.log(this.plants);
     },
   },
 };
