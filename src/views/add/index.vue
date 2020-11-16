@@ -1,6 +1,13 @@
 <template>
-  <section>
-    <h1 class="font-bold text-2xl">Nueva Planta</h1>
+  <section class="mt-24">
+    <div class="flex justify-center">
+      <img
+        src="@/assets/images/botanical.svg"
+        alt="Cactus"
+        class="w-48"
+      />
+    </div>
+    <h1 class="font-bold text-2xl text-center mt-2">Nueva Planta</h1>
     <form class="mt-8" @submit.prevent="onSubmit">
       <!-- Recibe el evento llamado input de autocomplete -->
       <Autocomplete
