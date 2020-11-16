@@ -14,7 +14,7 @@ Este es un proyecto para tarbajar distintos conceptos como REST, Firebase usando
 
 El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plantas. Además consultamos la platas desde la API de [Trefle](https://trefle.io/) usando [Axios](https://github.com/axios/axios). Para evitar el error pro acceso local se ha usado la extensión de [CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es) de Chrome.
 
-## Tecnología susadas
+## Tecnología usadas
 
 - [VueJS](https://vuejs.org/)
 - [Firebase](https://firebase.google.com/)
@@ -25,7 +25,7 @@ El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plan
 - [Axios](https://github.com/axios/axios)
 - [CORS Chroem Extensión](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es)
 
-## Funcionamiento con npm: 
+## Funcionamiento con NPM
 
 #### Project setup
 
@@ -71,7 +71,6 @@ Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twi
     <td align="center"><a href="https://twitter.com/joseluisgonsan"><img src="https://pbs.twimg.com/profile_images/1164967571579396096/YXMN71A1_400x400.jpg" width="100px;"/><br /><sub><b>joseluisgs</b></a> <a href="https://github.com/joseluisgs">💻</a></sub></td>
   </tr>
 </table>
-
 
 ![Twitter](https://img.shields.io/twitter/follow/joseluisgonsan?style=social) ![GitHub](https://img.shields.io/github/followers/joseluisgs?style=social)
 
