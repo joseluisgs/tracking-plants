@@ -21,6 +21,7 @@
         @input="onChangeAutocomplete"
         :items="plants"
         @select-item="onSelectItem"
+        @clear-items="clearItems"
       />
       <div class="flex justify-center mt-8">
         <!-- Cambio a componentes personalizado -->
@@ -71,6 +72,7 @@ export default {
       this.clearItems();
     },
     clearItems() {
+      console.log('Este');
       this.plants = [];
     },
     onSubmit() {

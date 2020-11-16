@@ -1,16 +1,15 @@
 <template>
-  <div class="relative">
-    <div>
-      <input
-        type="text"
-        class="name-autocomplete border py-1 px-1 rounded w-full capitalize focus:outline-none"
-        v-model="itemSelected"
-        @input="changeInputValue"
-      />
-    </div>
+  <!-- Si pinchamos fuera limpia los resultados. Yo lo pondría en el padre -->
+  <div class="relative" v-click-outside="onClickOutsideInput">
+    <input
+      type="text"
+      @input="changeInputValue"
+      class="name-autocomplete border py-1 px-1 rounded w-full capitalize focus:outline-none"
+      v-model="itemSelected"
+    />
     <div
-      class="border py-1 px-1 h-32 overflow-y-scroll absolute w-full bg-white z-10"
-      v-if="(items && items.length>=1)"
+      class="border max-h-32 overflow-y-scroll absolute w-full bg-white z-10"
+      v-if="items && items.length >= 1"
     >
       <span
         v-for="item in items"
@@ -40,6 +39,7 @@ export default {
   },
   // Mis métodos
   methods: {
+    // Si emitimos eventos es para qie el padre podces las acciones.
     changeInputValue() {
       // Emitimos el evento de buscar que se llamará inpu y devolverá el valor event
       this.$emit('input', this.itemSelected);
@@ -48,6 +48,10 @@ export default {
     selectItem(item) {
       this.itemSelected = item.name;
       this.$emit('select-item', item);
+    },
+    // Si pincgamos fuera, emitimos el evento de que limpiamos
+    onClickOutsideInput() {
+      this.$emit('clear-items');
     },
   },
 };
