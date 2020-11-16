@@ -16,7 +16,8 @@ export default {
     try {
       const response = await Service.get('search', { params });
       // data es donde viene el JSON y los datos de la API vienen en data, por eso data.data. Tranformamos.
-      return PlantsTransformer.fetchCollection(response.data.data);
+      // Nos quedamos con los 10 primeros
+      return PlantsTransformer.fetchCollection(response.data.data.slice(0, 9));
     } catch (error) {
       console.error(error);
       return null;

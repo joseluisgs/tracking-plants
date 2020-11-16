@@ -3,9 +3,10 @@
   <div class="relative" v-click-outside="onClickOutsideInput">
     <input
       type="text"
-      @input="changeInputValue"
+      @input="changeValueAutocomplete"
       class="name-autocomplete border py-1 px-1 rounded w-full capitalize focus:outline-none"
       v-model="itemSelected"
+      :placeholder="placeholder"
     />
     <div
       class="border max-h-32 overflow-y-scroll absolute w-full bg-white z-10"
@@ -36,14 +37,17 @@ export default {
       type: Array,
       default: () => [],
     },
+    placeholder: {
+      type: String,
+    },
   },
   // Mis métodos
   methods: {
     // Si emitimos eventos es para qie el padre podces las acciones.
-    changeInputValue() {
+    changeValueAutocomplete() {
       // Emitimos el evento de buscar que se llamará inpu y devolverá el valor event
-      this.$emit('input', this.itemSelected);
-      // this.$emit('input', event.target.value);
+      this.$emit('is-typing', this.itemSelected);
+      // this.$emit('is-typing', event.target.value);
     },
     selectItem(item) {
       this.itemSelected = item.name;
