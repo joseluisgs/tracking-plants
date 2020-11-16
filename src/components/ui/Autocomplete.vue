@@ -1,5 +1,5 @@
 <template>
-  <div class="autocomplete-wraper">
+  <div class="relative">
     <div>
       <input
         type="text"
@@ -8,7 +8,10 @@
         @input="changeInputValue"
       />
     </div>
-    <div class="border">
+    <div
+      class="border py-1 px-1 h-32 overflow-y-scroll absolute w-full bg-white z-10"
+      v-if="items.length"
+    >
       <span
         v-for="item in items"
         :key="item.id"
