@@ -1,10 +1,16 @@
 <template>
   <section class="mt-20">
     <div class="flex justify-center">
-      <img
-        src="@/assets/images/botanical.svg"
+      <!-- Por si quiero cambiar la imagen -->
+      <img v-if="plantImage"
+        :src= "plantImage"
         alt="Cactus"
-        class="w-48"
+        class="w-48 h-64"
+      />
+      <img v-else
+        src= "@/assets/images/botanical.svg"
+        alt="Cactus"
+        class="w-48 h-64"
       />
     </div>
     <h1 class="font-bold text-2xl text-center mt-2">Nueva Planta</h1>
@@ -40,7 +46,7 @@ export default {
   data: () => ({
     plants: null,
     currentPlant: null,
-    // autocompleteValue: null,
+    plantImage: null,
   }),
   // Mis métodos
   methods: {
@@ -61,6 +67,7 @@ export default {
       // console.log(item);
       // this.autocompleteValue = item.name;
       this.currentPlant = item;
+      // this.plantImage = this.currentPlant.image;
       this.clearItems();
     },
     clearItems() {
@@ -69,6 +76,9 @@ export default {
     onSubmit() {
       this.savePlant(this.currentPlant);
       console.log(`Planta ${this.currentPlant.name} salvado :)`);
+      this.currentPlant = null;
+      // this.plantImage = null;
+      this.plants = [];
     },
   },
 };

@@ -10,7 +10,7 @@
     </div>
     <div
       class="border py-1 px-1 h-32 overflow-y-scroll absolute w-full bg-white z-10"
-      v-if="items.length"
+      v-if="(items && items.length>=1)"
     >
       <span
         v-for="item in items"
