@@ -55,6 +55,7 @@ describe('Global Components -> Ui -> TheButton', () => {
   });
 
   // Probamos los validate. Primero como ejemplo montandolo
+  // https://vueschool.io/articles/vuejs-tutorials/how-to-test-custom-prop-validators-in-vuejs/
   test('should validate primary style', () => {
     const { wrapper } = build({ theme: 'primary' });
     const { theme } = wrapper.vm.$options.props;
@@ -63,7 +64,7 @@ describe('Global Components -> Ui -> TheButton', () => {
     expect(theme.validate('other')).toBeFalsy();
   });
 
-  // Este ejemplo sin montalor
+  // Este ejemplo sin montar
   test('should validate other styles', () => {
     const { theme } = TheButton.props;
     expect(theme.validate('primary')).toBeTruthy();

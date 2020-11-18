@@ -7,16 +7,19 @@
       class="name-autocomplete border py-1 px-1 rounded w-full capitalize focus:outline-none"
       v-model="itemSelected"
       :placeholder="placeholder"
+      data-test="autocomplete-input"
     />
     <div
       class="border max-h-32 overflow-y-scroll absolute w-full bg-white z-10"
       v-if="items && items.length >= 1"
+      data-test="wrapper-items-autocomplete"
     >
       <span
         v-for="item in items"
         :key="item.id"
         class="block cursor-pointer capitalize py-1 px-1 hover:font-bold hover:bg-gray-200"
         @click="selectItem(item)"
+        data-test="autocomplete-item"
       >
         {{ item.name }}
       </span>
@@ -53,7 +56,7 @@ export default {
       this.itemSelected = item.name;
       this.$emit('select-item', item);
     },
-    // Si pincgamos fuera, emitimos el evento de que limpiamos
+    // Si pinchamos fuera, emitimos el evento de que limpiamos
     onClickOutsideInput() {
       this.$emit('clear-items');
     },
