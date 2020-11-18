@@ -33,7 +33,7 @@ describe('Global Components -> Ui -> Autocomplete', () => {
   });
 
   // Renderiza con la propiedad vacía el numero de listas, por lo tanto el div no existe
-  it('should not render items when prop items is empty', () => {
+  test('should not render items when prop items is empty', () => {
     const { wrapper } = build();
     // Encontramos el elemento con esta clase
     const autocompleteWrapper = wrapper.find(
@@ -44,7 +44,7 @@ describe('Global Components -> Ui -> Autocomplete', () => {
   });
 
   // Renderiza dos elementos
-  it('should render two items', () => {
+  test('should render two items', () => {
     const items = [
       { id: 1, name: 'foo' },
       { id: 2, name: 'bar' },
@@ -58,7 +58,7 @@ describe('Global Components -> Ui -> Autocomplete', () => {
   });
 
   // Selecciona el Item
-  it('should emit select-item event with clicked value', () => {
+  test('should emit select-item event with clicked value', () => {
     const items = [
       { id: 1, name: 'foo' },
       { id: 2, name: 'bar' },
