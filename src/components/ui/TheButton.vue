@@ -16,6 +16,7 @@ export default {
     theme: {
       type: String,
       default: 'primary',
+      // Mirar como se evalua propiedades de css en vue doc (inglés)
       validate: (value) => ['primary'].indexOf(value) !== -1,
     },
     size: {
@@ -28,6 +29,7 @@ export default {
       default: false,
     },
   },
+  // Propiedad computada
   computed: {
     // Aplica las clases que queramos
     buttonClasses() {
@@ -35,7 +37,10 @@ export default {
       const primaryClasses = `${commonClasses} bg-green-600 text-white`;
       const mediumClasses = 'w-3/5';
       const largeClasses = 'w-full';
+      // Devuelve un objeto de clases dpendiendo si se cumple o no la condición
+      // https://es.vuejs.org/v2/guide/class-and-style.html
       return {
+        // If else colapsado
         [primaryClasses]: this.theme === 'primary',
         [mediumClasses]: this.size === 'medium',
         [largeClasses]: this.size === 'large',
