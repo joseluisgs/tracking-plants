@@ -77,4 +77,12 @@ describe('Global Components -> Ui -> Autocomplete', () => {
       name: 'foo',
     });
   });
+
+  // Probamos el evento cd pulsar en el exterior
+  test('should emit outside event click', () => {
+    const { wrapper } = build();
+    wrapper.vm.onClickOutsideInput();
+    expect(wrapper.emitted()['clear-items']).toBeDefined();
+    expect(wrapper.emitted()['clear-items']).toEqual([[]]);
+  });
 });
