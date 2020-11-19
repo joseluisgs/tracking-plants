@@ -4,7 +4,7 @@
       <img
         :src= "currentPlant ? currentPlant.image : require('@/assets/images/botanical.svg')"
         alt="Cactus"
-        class="w-48 h-64"
+        class="w-48 h-64 rounded-xl"
       />
     </div>
     <h1 class="font-bold text-2xl text-center mt-2">{{textPlant()}}</h1>
