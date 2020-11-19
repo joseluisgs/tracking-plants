@@ -55,4 +55,12 @@ describe('Add View -> Component -> AddPlantForm', () => {
     expect(wrapper.emitted()['submit-form']).toBeDefined();
     expect(wrapper.emitted()['submit-form']).toEqual([[null]]);
   });
+  // Probamos evento onSelectItem(item)
+  test('should emit onSelectItem', () => {
+    const { wrapper } = build();
+    const value = { value: ' value' };
+    wrapper.vm.onSelectItem(value);
+    expect(wrapper.emitted()['selected-plant']).toBeDefined();
+    expect(wrapper.emitted()['selected-plant']).toEqual([[value]]);
+  });
 });
