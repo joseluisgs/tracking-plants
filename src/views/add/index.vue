@@ -2,17 +2,18 @@
   <section class="mt-20 custom-container">
     <div class="flex justify-center">
       <img
-        src= "@/assets/images/botanical.svg"
+        :src= "currentPlant ? currentPlant.image : require('@/assets/images/botanical.svg')"
         alt="Cactus"
         class="w-48 h-64"
       />
     </div>
-    <h1 class="font-bold text-2xl text-center mt-2">Nueva Planta</h1>
+    <h1 class="font-bold text-2xl text-center mt-2">{{textPlant()}}</h1>
     <AddPlantForm
       :plants="plants"
       @submit-form="onSubmit"
       @find-plant="findPlant"
       @clear-items="clearItems"
+      @selected-plant="selectedPlant"
     />
   </section>
 </template>
@@ -31,6 +32,7 @@ export default {
   // Mi modelo
   data: () => ({
     plants: null,
+    currentPlant: null,
   }),
   // Mis métodos
   methods: {
@@ -44,11 +46,18 @@ export default {
     },
     clearItems() {
       this.plants = [];
+      this.currentPlant = null;
     },
     async onSubmit(currentPlant) {
       await this.savePlant(currentPlant);
       console.log(`Planta ${currentPlant.name} salvado :)`);
       this.clearItems();
+    },
+    selectedPlant(currentPlant) {
+      this.currentPlant = currentPlant;
+    },
+    textPlant() {
+      return this.currentPlant ? this.currentPlant.name : 'Nueva Planta';
     },
   },
 };
