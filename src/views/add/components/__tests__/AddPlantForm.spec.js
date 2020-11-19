@@ -21,11 +21,38 @@ describe('Add View -> Component -> AddPlantForm', () => {
   });
 
   // Probamos evento onChangeAutocomplete
-  test('should emit onChangeAutocomplete', () => {
+  test('should emit onChangeAutocomplete size >= 3', () => {
     const { wrapper } = build();
     const value = [1, 2, 3];
     wrapper.vm.onChangeAutocomplete(value);
     expect(wrapper.emitted()['find-plant']).toBeDefined();
     expect(wrapper.emitted()['find-plant']).toEqual([[value]]);
+  });
+
+  test('should emit onChangeAutocomplete size <= 2', () => {
+    const { wrapper } = build();
+    const value = [1, 2];
+    wrapper.vm.onChangeAutocomplete(value);
+    expect(wrapper.emitted()['find-plant']).not.toBeDefined();
+  });
+
+  // Probamos evento clearItems
+  test('should emit clearItems', () => {
+    const { wrapper } = build();
+    wrapper.vm.clearItems();
+    expect(wrapper.emitted()['clear-items']).toBeDefined();
+    expect(wrapper.emitted()['clear-items']).toEqual([[]]);
+  });
+  // Probamos evento clearItems
+  test('should do clearAll', () => {
+    const { wrapper } = build();
+    wrapper.vm.clearAll();
+  });
+  // Probamos evento clearItems
+  test('should emit onSubmit', () => {
+    const { wrapper } = build();
+    wrapper.vm.onSubmit();
+    expect(wrapper.emitted()['submit-form']).toBeDefined();
+    expect(wrapper.emitted()['submit-form']).toEqual([[null]]);
   });
 });
