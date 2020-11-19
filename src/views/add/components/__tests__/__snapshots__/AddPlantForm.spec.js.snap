@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Add View -> Component -> AddPlantForm should match snapshot 1`] = `
+<validationobserver-stub
+  tag="span"
+  vid="obs_0"
+>
+  <form
+    class="mt-8"
+  >
+    <validationprovider-stub
+      bails="true"
+      custommessages="[object Object]"
+      debounce="0"
+      detectinput="true"
+      mode="aggressive"
+      name="autocomplete"
+      rules="required"
+      skipifempty="true"
+      tag="span"
+      vid=""
+    />
+     
+    <div
+      class="flex justify-center mt-8"
+    >
+      <thebutton-stub
+        size="large"
+        theme="primary"
+      >
+         Guardar 
+      </thebutton-stub>
+    </div>
+  </form>
+</validationobserver-stub>
+`;

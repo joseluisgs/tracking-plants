@@ -9,7 +9,7 @@
         rules="required"
         v-slot="{ errors }"
       >
-        <label class="font-bold" for="autocomplete">Busca una planta</label>
+        <label class="font-bold" for="autocomplete">*Busca una planta</label>
         <Autocomplete
           v-model="autocompleteValue"
           :items="plants"
