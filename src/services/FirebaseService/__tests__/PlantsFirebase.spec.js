@@ -1,7 +1,7 @@
-import PlantsService from '../Plants';
+import PlantsService from '../PlantsFirebase';
 
 // Se crea un mock que simula el servicio
-jest.mock('../Plants');
+jest.mock('../PlantsFirebase');
 
 const data = {
   date: '2020-11-16T17:45:01.530Z',

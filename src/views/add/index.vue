@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import PlantsService from '@/services/PlantsService/Plants';
+import PlantsService from '@/services/PlantsService/PlantsRest';
 import { mapActions } from 'vuex';
 import AddPlantForm from './components/AddPlantForm.vue';
 

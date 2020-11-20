@@ -1,7 +1,7 @@
-import PlantsService from '../Plants';
+import PlantsService from '../PlantsRest';
 
 // Se crea un mock que simula el servicio
-jest.mock('../Plants');
+jest.mock('../PlantsRest');
 
 describe('API Services -> Plants', () => {
   test('Should get plants with custom name', async () => {
