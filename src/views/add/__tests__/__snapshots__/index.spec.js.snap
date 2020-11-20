@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Add View Debería ser igual a su Snapshot 1`] = `
+<section
+  class="mt-20 custom-container"
+>
+  <div
+    class="flex justify-center"
+  >
+    <img
+      alt="Cactus"
+      class="w-48 h-64 rounded-xl"
+      src=""
+    />
+  </div>
+   
+  <h1
+    class="font-bold text-2xl text-center mt-2"
+  >
+    Nueva Planta
+  </h1>
+   
+  <addplantform-stub />
+</section>
+`;

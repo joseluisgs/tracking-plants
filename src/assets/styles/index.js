@@ -1,2 +1,3 @@
 // Para enlazar todos los estilos
-import './tailwind.css';
+import './tailwind.scss';
+import './globals.scss';
