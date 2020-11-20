@@ -4,7 +4,14 @@
 import PlantService from '@/services/FirebaseService/PlantsFirebase';
 
 export default {
-  async savePlant({ commit }, payload) {
+  async savePlant(_, payload) {
     const res = await PlantService.post(payload);
+  },
+
+  async listPlants({ commit }) {
+    const res = await PlantService.get();
+    // Llamamos a la mutación
+    commit('setPlants', res);
+    return res;
   },
 };
