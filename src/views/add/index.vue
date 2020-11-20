@@ -52,6 +52,7 @@ export default {
       await this.savePlant(currentPlant);
       console.log(`Planta ${currentPlant.name} salvado :)`);
       this.clearItems();
+      this.$router.push({ name: 'Home' });
     },
     selectedPlant(currentPlant) {
       this.currentPlant = currentPlant;
