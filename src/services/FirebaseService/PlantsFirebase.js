@@ -18,9 +18,8 @@ export default {
   // Get all
   async get() {
     // Obtenemos todos
-    const response = await Service.plantsCollection.get();
+    const res = await Service.plantsCollection.get();
     // Y de todos los datos nos quedamos con el data almacenado en el documento
-    const parsedData = response.docs.map((item) => item.data());
-    return parsedData;
+    return res.docs.map((item) => item.data());
   },
 };
