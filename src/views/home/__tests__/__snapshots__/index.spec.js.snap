@@ -4,6 +4,8 @@ exports[`Test Home View Debería ser igual a su Snapshot 1`] = `
 <div
   class="home"
 >
-  <listplants-stub />
+  <listplants-stub
+    plants=""
+  />
 </div>
 `;

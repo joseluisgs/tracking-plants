@@ -18,4 +18,12 @@ describe('Test Home View', () => {
     // El elemento debe coicidir con la copia montada
     expect(wrapper.element).toMatchSnapshot();
   });
+
+  test('Debería ejecutar el método goToDetail', () => {
+    const { wrapper } = build();
+    // El elemento debe coicidir con la copia montada
+    const plantId = 20;
+    wrapper.vm.goToDetail(plantId);
+    expect(true).toBeTruthy();
+  });
 });

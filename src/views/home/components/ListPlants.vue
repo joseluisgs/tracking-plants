@@ -20,6 +20,7 @@
         :key="plant.id"
         class="plant-item shadow-lg w-32 h-32 rounded-lg mr-5 flex items-center justify-center flex-col cursor-pointer hover:bg-gray-100 bg-green-100"
         @click="clickItem(plant.id)"
+        data-test="list-plants-item"
       >
       <!-- src="@/assets/images/botanical.svg" -->
         <img
