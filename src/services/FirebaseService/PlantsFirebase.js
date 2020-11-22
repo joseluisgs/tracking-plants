@@ -22,4 +22,10 @@ export default {
     // Y de todos los datos nos quedamos con el data almacenado en el documento
     return res.docs.map((item) => item.data());
   },
+  // Get by ID
+  async getById(plantId) {
+    const res = await Service.plantsCollection.doc(plantId.toString()).get();
+    // Devolvemos los datos
+    return res.data();
+  },
 };
