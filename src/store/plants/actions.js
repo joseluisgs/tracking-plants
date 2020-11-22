@@ -20,6 +20,6 @@ export default {
 
   // Obtenemos una planta
   async getPlant(_, plantId) {
-    return PlantService.getBtId(plantId);
+    return PlantService.getById(plantId);
   },
 };

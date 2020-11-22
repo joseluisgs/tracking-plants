@@ -17,7 +17,7 @@ const routes = [
     component: () => import('@/views/add/index.vue'),
   },
   {
-    path: 'detail/:id',
+    path: '/detail/:id',
     name: 'PlantDetail',
     // Nos iindica que el propio id será prop del componente
     props: true,
