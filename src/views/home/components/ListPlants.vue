@@ -57,6 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  // Para evitar que salga el scroll
   .list {
     -ms-overflow-style: none;
     scrollbar-width: none;

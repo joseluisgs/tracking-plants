@@ -34,6 +34,7 @@ export default {
       this.plants = await this.listPlants();
     },
     goToDetail(plantId) {
+      // Vamos a llamar a detalle
       console.log(`Detalles de: ${plantId}`);
     },
   },
