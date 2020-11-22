@@ -5,13 +5,19 @@ exports[`Vista: HomeView -> Componente: ListPlants Debería ser igual a su Snaps
   <h1
     class="title font-bold text-xl mb-4"
   >
-    Mis Plantas
+    
+    Mis plantas:
+  
   </h1>
    
-  <ul>
-    <li>
+  <ul
+    class="list flex items-center overflow-x-scroll py-4"
+  >
+    <li
+      class="mr-5"
+    >
       <button
-        class="border border-black rounded-full py-1 px-3 text-3xl"
+        class="flex justify-center rounded-lg border border-red-main-400 text-3xl w-12 h-12 bg-green-600 text-white"
         data-test-id="add-button"
       >
         
@@ -19,6 +25,7 @@ exports[`Vista: HomeView -> Componente: ListPlants Debería ser igual a su Snaps
       
       </button>
     </li>
+     
   </ul>
 </div>
 `;

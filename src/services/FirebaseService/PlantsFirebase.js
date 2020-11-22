@@ -15,4 +15,11 @@ export default {
     });
     return res;
   },
+  // Get all
+  async get() {
+    // Obtenemos todos
+    const res = await Service.plantsCollection.get();
+    // Y de todos los datos nos quedamos con el data almacenado en el documento
+    return res.docs.map((item) => item.data());
+  },
 };

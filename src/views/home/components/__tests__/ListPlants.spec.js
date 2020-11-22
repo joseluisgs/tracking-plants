@@ -30,7 +30,7 @@ describe('Vista: HomeView -> Componente: ListPlants', () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
-  it('Debería ir a la ruta indicada al hacer click', () => {
+  test('Debería ir a la ruta indicada al hacer click', () => {
     const { wrapper } = build();
     // Buscamos el botón etiquetado de esta manera
     const button = wrapper.find('[data-test-id="add-button"]');
@@ -40,5 +40,13 @@ describe('Vista: HomeView -> Componente: ListPlants', () => {
     expect(wrapper.vm.$router.push).toHaveBeenCalledTimes(1);
     // Y va a esa ruta
     expect(wrapper.vm.$router.push).toHaveBeenCalledWith({ name: 'AddPlant' });
+  });
+
+  test('Should emit the event item-clicked', () => {
+    const { wrapper } = build();
+    const plantId = 28;
+    wrapper.vm.clickItem(plantId);
+    expect(wrapper.emitted()['item-clicked']).toBeTruthy();
+    expect(wrapper.emitted()['item-clicked']).toEqual([[28]]);
   });
 });
