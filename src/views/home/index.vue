@@ -36,6 +36,7 @@ export default {
     goToDetail(plantId) {
       // Vamos a llamar a detalle
       console.log(`Detalles de: ${plantId}`);
+      this.$router.push({ name: 'PlantDetail', params: { id: plantId } });
     },
   },
 };
