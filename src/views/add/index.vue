@@ -53,7 +53,7 @@ export default {
         ...currentPlant,
         dueDate: new Date().toISOString(),
       };
-      console.log(currentPlant);
+      console.log(parsePlant);
       await this.savePlant(parsePlant);
       console.log(`Planta ${currentPlant.name} salvado :)`);
       this.clearItems();

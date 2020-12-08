@@ -18,7 +18,7 @@
       <li
         v-for="plant in plants"
         :key="plant.id"
-        class="plant-item shadow-lg w-32 h-32 rounded-lg mr-5 flex items-center justify-center flex-col cursor-pointer hover:bg-gray-100 bg-green-100"
+        class="plant-item shadow-lg w-32 h-32 rounded-lg mr-5 flex items-center justify-center flex-col cursor-pointer hover:bg-gray-100 bg-green-200"
         @click="clickItem(plant.id)"
         data-test="list-plants-item"
       >
@@ -29,6 +29,7 @@
           :alt="plant.name"
         />
         <p class="text-sm capitalize font-semibold">{{ plant.name }}</p>
+        <p class="duration"> {{plant.dueDate | moment("D MMMM YYYY")}}</p>
       </li>
     </ul>
   </div>
@@ -70,5 +71,13 @@ export default {
     max-width: 140px;
     min-height: 140px;
     max-height: 140px;
+  }
+  .duration {
+    width: fit-content;
+    @apply px-4;
+    @apply py-1;
+    @apply font-medium;
+    @apply text-xs;
+    @apply text-center;
   }
 </style>
