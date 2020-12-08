@@ -97,6 +97,7 @@ export default {
       // Muestra lso riegos en el calendario
       this.loadWaterPlantsDates();
     },
+    // Cuando pulsamos el Toggle
     onChangeToggleButton(value) {
       if (value.value) {
         console.log(value.value);
@@ -144,7 +145,6 @@ export default {
       await this.updatePlant(data);
       this.loadData();
     },
-
     // La quitamos de riego
     async removeLastPlant() {
       this.plant.waterPlant.pop();
