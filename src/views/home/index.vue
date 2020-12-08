@@ -34,7 +34,8 @@ export default {
       this.plants = await this.listPlants();
     },
     goToDetail(plantId) {
-      console.log(`Detalles de: ${plantId}`);
+      // Vamos a llamar a detalle
+      this.$router.push({ name: 'PlantDetail', params: { id: plantId } });
     },
   },
 };

@@ -4,7 +4,7 @@ import plants from './plants';
 
 Vue.use(Vuex);
 
-// Voy a Dividir Vuex en módulos para modeularizar más si quisiera reutilizar una parte
+// Voy a Dividir Vuex en módulos para modularizar más si quisiera reutilizar una parte
 export default new Vuex.Store({
   // state: {
   // },
