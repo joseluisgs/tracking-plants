@@ -21,6 +21,21 @@
           @change="onChangeToggleButton"
         />
       </div>
+      <div class="mt-6">
+        <span
+          @click="toggleCalendar"
+          class="text-calendar block text-lg cursor-pointer font-bold hover:underline mb-3 text-blue-600"
+          >Ver calendario de riego</span
+        >
+        <transition name="fade">
+          <Calendar
+            v-if="shouldShowCalendar"
+            color="green"
+            title-position="left"
+            :attributes="attrs"
+          />
+        </transition>
+      </div>
     </div>
   </section>
 </template>
@@ -28,12 +43,14 @@
 <script>
 import { ToggleButton } from 'vue-js-toggle-button';
 import PlantsService from '@/services/PlantsService/PlantsRest';
+// import Calendar from 'v-calendar/lib/components/calendar.umd';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Detail',
   components: {
     ToggleButton,
+    Calendar: () => import('v-calendar/lib/components/calendar.umd'),
   },
 
   // Mis propiedades que recibo (en este caso del router al ponerle true)
@@ -46,6 +63,8 @@ export default {
   data: () => ({
     plant: [],
     isWaterPlant: false,
+    attrs: [],
+    shouldShowCalendar: false,
   }),
   // Ciclo de vida
   mounted() {
@@ -75,7 +94,10 @@ export default {
       console.log(this.plant.id);
       // Comprobamos si se ha regado
       this.checkWaterPlantToday();
+      // Muestra lso riegos en el calendario
+      this.loadWaterPlantsDates();
     },
+    // Cuando pulsamos el Toggle
     onChangeToggleButton(value) {
       if (value.value) {
         console.log(value.value);
@@ -100,6 +122,15 @@ export default {
         && date.getFullYear() === today.getFullYear()
       );
     },
+    // Carga la lista de fechas en el calendario
+    loadWaterPlantsDates() {
+      // es un array de singles dates
+      // https://vcalendar.io/dates.html#single-dates
+      this.attrs = this.plant.waterPlant.map((date) => ({
+        highlight: true,
+        dates: new Date(date),
+      }));
+    },
     // Actualizamos el riego de la planta
     async savePlant() {
       const today = new Date();
@@ -114,7 +145,6 @@ export default {
       await this.updatePlant(data);
       this.loadData();
     },
-
     // La quitamos de riego
     async removeLastPlant() {
       this.plant.waterPlant.pop();
@@ -124,6 +154,10 @@ export default {
       };
       await this.updatePlant(data);
       this.loadData();
+    },
+    // Muestra el calendario
+    toggleCalendar() {
+      this.shouldShowCalendar = !this.shouldShowCalendar;
     },
   },
 };
