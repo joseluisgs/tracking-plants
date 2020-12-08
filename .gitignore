@@ -4,8 +4,8 @@ node_modules
 coverage
 
 # Ficheros de tokens y claves
-src/services/PlantsService/PlantsServiceConfig.js
-src/services/FirebaseService/FirebaseConfig.js
+# src/services/PlantsService/PlantsServiceConfig.js
+# src/services/FirebaseService/FirebaseConfig.js
 
 # local env files
 .env.local

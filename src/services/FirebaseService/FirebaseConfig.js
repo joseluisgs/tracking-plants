@@ -13,7 +13,7 @@ export default {
   // messagingSenderId: 'messaging_id',
   // appId: 'app_id',
 
-  // // Dede las variables de entrono
+  // Dede las variables de entrono
   apiKey: process.env.VUE_APP_FIRE_API_KEY,
   authDomain: process.env.VUE_APP_FIRE_AUTH_DOMAIN,
   databaseURL: process.env.VUE_APP_FIRE_DATABASE_URL,
