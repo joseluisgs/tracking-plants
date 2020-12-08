@@ -49,6 +49,7 @@ export default {
       this.currentPlant = null;
     },
     async onSubmit(currentPlant) {
+      console.log(currentPlant);
       await this.savePlant(currentPlant);
       console.log(`Planta ${currentPlant.name} salvado :)`);
       this.clearItems();

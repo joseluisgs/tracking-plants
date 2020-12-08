@@ -28,4 +28,10 @@ export default {
     // Devolvemos los datos
     return res.data();
   },
+
+  // Update
+  async update(plantId, plantData) {
+    const res = await Service.plantsCollection.doc(plantId.toString()).update(plantData);
+    return res;
+  },
 };
