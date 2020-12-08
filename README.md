@@ -2,6 +2,7 @@
 
 Mobile Web App (PWA) realizada con Vue para poder realizar el mejor cuidado de tus plantas. Otro Ejemplo de usar Vue + Firebase con Tailwind CSS, Jest y otras tecnologías.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0383b716-6b0d-41e3-a7db-74f8e8c5ae5f/deploy-status)](https://app.netlify.com/sites/trackingplants/deploys)
 [![VueJS](https://img.shields.io/badge/VueJs-%20Ready-41B883)](https://vuejs.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%20Ready-5c6ac4)](https://tailwindcss.com/)
 [![Firebase](https://img.shields.io/badge/Firebase-%20Ready-FFA000)](https://gulpjs.com/)
@@ -14,6 +15,8 @@ Este es un proyecto para tarbajar distintos conceptos como REST, Firebase usando
 
 El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plantas. Además consultamos la platas desde la API de [Trefle](https://trefle.io/) usando [Axios](https://github.com/axios/axios). Para evitar el error pro acceso local se ha usado la extensión de [CORS](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es) de Chrome.
 
+El despliegue es Netlyfy en [https://trackingplants.netlify.app/](https://trackingplants.netlify.app/)
+
 ## Tecnología usadas
 
 - [VueJS](https://vuejs.org/)
@@ -24,6 +27,7 @@ El proyecto en sí nos sirve para llevar una agenda de como cuidar nuestras plan
 - [Trefle](https://trefle.io/)
 - [Axios](https://github.com/axios/axios)
 - [CORS Chroem Extensión](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=es)
+- [Netlify](https://www.netlify.com/)
 
 ## Funcionamiento con NPM
 

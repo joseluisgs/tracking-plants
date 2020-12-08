@@ -8,9 +8,9 @@
         :src="plant.image"
       />
     </div>
-    <div class="detail-body bg-white absolute w-11/12 h-full p-8">
+    <div class="detail-body bg-white absolute w-full h-full p-8">
       <div>
-        <pre> {{ plant.name }}</pre>
+        <pre v-if="plant"> {{ plant.name }} </pre>
       </div>
     </div>
   </section>
