@@ -49,8 +49,12 @@ export default {
       this.currentPlant = null;
     },
     async onSubmit(currentPlant) {
-      console.log(currentPlant);
-      await this.savePlant(currentPlant);
+      const parsePlant = {
+        ...currentPlant,
+        dueDate: new Date().toISOString(),
+      };
+      console.log(parsePlant);
+      await this.savePlant(parsePlant);
       console.log(`Planta ${currentPlant.name} salvado :)`);
       this.clearItems();
       this.$router.push({ name: 'Home' });

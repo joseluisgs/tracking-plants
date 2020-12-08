@@ -6,6 +6,8 @@ import { extend } from 'vee-validate';
 // Importamos nuestro servicios de Firebase
 // eslint-disable-next-line no-unused-vars
 // import Firebase from './services/FirebaseService';
+import VueMoment from 'vue-moment';
+import moment from 'moment'; // Moment en espñol
 import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
@@ -21,6 +23,11 @@ Object.keys(rules).forEach((rule) => {
 });
 
 Vue.use(vClickOutside);
+
+// moment
+require('moment/locale/es');
+
+Vue.use(VueMoment, { moment });
 
 Vue.config.productionTip = false;
 

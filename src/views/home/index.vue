@@ -1,5 +1,8 @@
 <template>
   <div class="home custom-container">
+    <RecentPlants
+      :plants="recentPlants"
+    />
     <ListPlants
       :plants="plants"
        @item-clicked="goToDetail"
@@ -10,6 +13,7 @@
 <script>
 // @ is an alias to /src
 import ListPlants from '@/views/home/components/ListPlants.vue';
+import RecentPlants from '@/views/home/components/RecentPlants.vue';
 import { mapActions } from 'vuex';
 
 export default {
@@ -17,10 +21,12 @@ export default {
   // Mis componentes
   components: {
     ListPlants,
+    RecentPlants,
   },
   // Mis datos
   data: () => ({
     plants: [],
+    recentPlants: [],
   }),
   // Mi ciclo de vida
   mounted() {
@@ -29,9 +35,11 @@ export default {
   methods: {
     ...mapActions({
       listPlants: 'plants/listPlants',
+      listRecentPlants: 'plants/listRecentPlants',
     }),
     async loadData() {
       this.plants = await this.listPlants();
+      this.recentPlants = await this.listRecentPlants();
     },
     goToDetail(plantId) {
       // Vamos a llamar a detalle
