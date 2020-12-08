@@ -5,7 +5,8 @@ import FamilyTransformer from './Family';
 export default class PlantTransformer extends BaseTransformer {
   static fetch(plant) {
     return {
-      id: plant.id,
+      // id: plant.id, // Cuidado que el id no coindice debe ser el de la especie
+      id: plant.main_species_id,
       name: plant.common_name,
       slug: plant.slug,
       scientificName: plant.scientific_name,

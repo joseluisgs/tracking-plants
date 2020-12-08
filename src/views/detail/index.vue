@@ -9,19 +9,32 @@
       />
     </div>
     <div class="detail-body bg-white absolute w-full h-full p-8">
-      <div>
+      <!-- <div>
         <pre v-if="plant"> {{ plant.name }} </pre>
+      </div> -->
+      <div>
+        <p class="font-bold">¿Has regado tu planta hoy?</p>
+        <ToggleButton
+          v-model="isWaterPlant"
+          :sync="true"
+          :labels="{ checked: 'SI', unchecked: 'NO' }"
+          @change="onChangeToggleButton"
+        />
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { ToggleButton } from 'vue-js-toggle-button';
 import PlantsService from '@/services/PlantsService/PlantsRest';
 import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Detail',
+  components: {
+    ToggleButton,
+  },
 
   // Mis propiedades que recibo (en este caso del router al ponerle true)
   props: {
@@ -32,6 +45,7 @@ export default {
   // Mi modelo de datos
   data: () => ({
     plant: [],
+    isWaterPlant: false,
   }),
   // Ciclo de vida
   mounted() {
@@ -44,17 +58,72 @@ export default {
   methods: {
   // Mis métodos
   // De vuex
-    ...mapActions('plants', ['getPlant']),
+    ...mapActions('plants', ['getPlant', 'updatePlant']),
     async loadData() {
-      this.plant = this.getCurrentPlant(+this.id); // Nos viene un number
+      let currentPlant = this.getCurrentPlant(+this.id); // Nos viene un number
       // Si no tenemos nada, lo recuperamos
-      if (!(this.plant && this.plant.length)) {
-        this.plant = await this.getPlant(this.id);
+      if (!(currentPlant && currentPlant.length)) {
+        currentPlant = await this.getPlant(this.id);
       }
       // Si venimos de la Home ya tenemos los datos
       // Recuperamos toda la información
-      const myplant = await PlantsService.fetchPlantWithURL(this.plant.id);
-      console.log(myplant);
+      const plant = await PlantsService.fetchPlantWithURL(currentPlant.id);
+      this.plant = {
+        ...currentPlant,
+        ...plant,
+      };
+      console.log(this.plant.id);
+      // Comprobamos si se ha regado
+      this.checkWaterPlantToday();
+    },
+    onChangeToggleButton(value) {
+      if (value.value) {
+        console.log(value.value);
+        this.savePlant();
+      } else {
+        console.log(value.value);
+        this.removeLastPlant();
+      }
+    },
+    // Miramos si hemos regado hoy
+    checkWaterPlantToday() {
+      if (this.plant.waterPlant && this.plant.waterPlant.length) {
+        this.isWaterPlant = this.plant.waterPlant.some((date) => this.isToday(new Date(date)));
+      }
+    },
+    // Es hoy
+    isToday(date) {
+      const today = new Date();
+      return (
+        date.getDate() === today.getDate()
+        && date.getMonth() === today.getMonth()
+        && date.getFullYear() === today.getFullYear()
+      );
+    },
+    // Actualizamos el riego de la planta
+    async savePlant() {
+      const today = new Date();
+      const hasWaterPlant = this.plant.waterPlant && this.plant.waterPlant.length;
+      const waterPlant = hasWaterPlant
+        ? [...this.plant.waterPlant, today.toISOString()]
+        : [today.toISOString()];
+      const data = {
+        id: this.plant.id,
+        data: waterPlant,
+      };
+      await this.updatePlant(data);
+      this.loadData();
+    },
+
+    // La quitamos de riego
+    async removeLastPlant() {
+      this.plant.waterPlant.pop();
+      const data = {
+        id: this.plant.id,
+        data: this.plant.waterPlant,
+      };
+      await this.updatePlant(data);
+      this.loadData();
     },
   },
 };

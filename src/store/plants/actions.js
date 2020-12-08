@@ -22,4 +22,12 @@ export default {
   async getPlant(_, plantId) {
     return PlantService.getById(plantId);
   },
+
+  // Actualizamos la planta
+  async updatePlant({ dispatch }, plantData) {
+    const { id, data } = plantData;
+    const waterPlant = [...data];
+    const res = await PlantService.update(id, { waterPlant });
+    dispatch('listPlants');
+  },
 };
