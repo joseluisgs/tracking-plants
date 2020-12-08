@@ -13,7 +13,7 @@ export default {
   // Listamos las plantas, commit porque llamamos a una mutación para actualizat el estado
   async listPlants({ commit }) {
     const res = await PlantService.get();
-    // Llamamos a la mutación
+    // Llamamos a la mutación, que salva las plantas
     commit('setPlants', res);
     return res;
   },
@@ -28,6 +28,7 @@ export default {
     const { id, data } = plantData;
     const waterPlant = [...data];
     const res = await PlantService.update(id, { waterPlant });
+    // Disparamos listarPlantas
     dispatch('listPlants');
   },
 };
