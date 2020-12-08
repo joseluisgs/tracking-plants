@@ -5,7 +5,7 @@ import * as rules from 'vee-validate/dist/rules';
 import { extend } from 'vee-validate';
 // Importamos nuestro servicios de Firebase
 // eslint-disable-next-line no-unused-vars
-import Firebase from './services/FirebaseService';
+// import Firebase from './services/FirebaseService';
 import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';

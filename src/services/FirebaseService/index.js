@@ -17,6 +17,7 @@ const defaultProject = firebase.initializeApp(firebaseConfig);
 
 // Elementos de Firebase a usar (Cargamos los que vayamos a usar)
 const db = firebase.firestore(); // Base de datos en tiempo real
+
 // const auth = firebase.auth(); // Autenticación
 // const storage = firebase.storage(); // Almacenamiento
 // Autenticación de Google, poner uno por método de identificación. Se deb eactivar en la consola de Firebase
