@@ -10,8 +10,7 @@
     </div>
     <div class="detail-body bg-white absolute w-full h-full p-8">
       <div>
-        <h1>{{ id }}</h1>
-        <pre> {{ plant }}</pre>
+        <pre> {{ plant.name }}</pre>
       </div>
     </div>
   </section>
