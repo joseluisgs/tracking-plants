@@ -31,4 +31,8 @@ export default {
     // Disparamos listarPlantas
     dispatch('listPlants');
   },
+  // Get Recent Plants
+  async listRecentPlants() {
+    return PlantService.getRecentPlants();
+  },
 };

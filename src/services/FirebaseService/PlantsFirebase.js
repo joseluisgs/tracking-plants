@@ -2,7 +2,7 @@ import Service from '.';
 
 // Operaciones siguiendo la numenclartira REST: post, update, delete, etc.
 export default {
-  // Crea uno nuevo
+  // Crea uno nuevo con los datos que queramos
   // https://firebase.google.com/docs/firestore/manage-data/add-data?hl=es-419#web
   async post(payload) {
     const res = await Service.plantsCollection.doc(payload.id.toString()).set({
@@ -11,7 +11,7 @@ export default {
       slug: payload.slug,
       links: payload.links,
       image: payload.image,
-      date: new Date().toISOString(),
+      dueDate: payload.dueDate,
     });
     return res;
   },
@@ -33,5 +33,16 @@ export default {
   async update(plantId, plantData) {
     const res = await Service.plantsCollection.doc(plantId.toString()).update(plantData);
     return res;
+  },
+  // Obtiene las plantas recientes
+  async getRecentPlants() {
+    // Filtramos por día y obtenemos las dos mas recientes
+    const res = await Service.plantsCollection
+      .where('dueDate', '<=', new Date().toISOString())
+      .orderBy('dueDate', 'desc')
+      .limit(2)
+      .get();
+    // Y de todos los datos nos quedamos con el data almacenado en el documento
+    return res.docs.map((item) => item.data());
   },
 };
