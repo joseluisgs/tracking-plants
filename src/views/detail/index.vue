@@ -1,14 +1,14 @@
 <template>
   <section class="relative">
-    <div class="h-screen bg-green-400 flex justify-between p-8" v-if="plant">
-      <h1 class="text-3xl capitalize font-bold">{{ plant.name }}</h1>
+    <div class="h-screen bg-green-400 flex justify-between p-4" v-if="plant">
+      <h1 class="text-3xl capitalize font-bold mt-3">{{ plant.name }}</h1>
       <img
         v-if="plant.image && plant.image.length"
-        class="w-56 rounded-lg h-40 mt-4"
+        class="w-42 rounded-lg h-40 mt-4 ml-2"
         :src="plant.image"
       />
     </div>
-    <div class="detail-body bg-white absolute w-full h-full p-8">
+    <div class="detail-body bg-white absolute w-11/12 h-full p-8">
       <div>
         <pre> {{ plant.name }}</pre>
       </div>
