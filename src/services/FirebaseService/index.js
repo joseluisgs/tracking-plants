@@ -14,6 +14,7 @@ const firebaseConfig = FirebaseConfig;
 
 // Inicializar Firebase. Es opcional guardarlo en una constante, si lo hago es para imprimirlo
 const defaultProject = firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 // Elementos de Firebase a usar (Cargamos los que vayamos a usar)
 const db = firebase.firestore(); // Base de datos en tiempo real
