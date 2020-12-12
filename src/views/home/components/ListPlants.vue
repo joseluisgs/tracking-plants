@@ -8,7 +8,7 @@
          <!-- data-test-id Esta clase solo nos sirve para detectar el botón en el test -->
         <button
           data-test-id="add-button"
-          class="flex justify-center rounded-lg border border-red-main-400 text-3xl w-12 h-12 bg-green-600 text-white"
+          class="add-button"
           @click="goToAddPlant"
         >
           +
@@ -18,7 +18,7 @@
       <li
         v-for="plant in plants"
         :key="plant.id"
-        class="plant-item shadow-lg w-32 h-32 rounded-lg mr-5 flex items-center justify-center flex-col cursor-pointer hover:bg-gray-100 bg-green-200"
+        class="plant-item hover:bg-gray-100;"
         @click="clickItem(plant.id)"
         data-test="list-plants-item"
       >
@@ -71,6 +71,17 @@ export default {
     max-width: 140px;
     min-height: 140px;
     max-height: 140px;
+    @apply shadow-lg;
+    @apply w-32;
+    @apply h-32;
+    @apply rounded-lg;
+    @apply mr-5;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply flex-col;
+    @apply cursor-pointer;
+    @apply bg-green-200;
   }
   .duration {
     width: fit-content;
@@ -80,4 +91,15 @@ export default {
     @apply text-xs;
     @apply text-center;
   }
+  .add-button {
+    border-radius: 16px;
+    line-height: unset;
+    @apply flex;
+    @apply justify-center;
+    @apply border;
+    @apply text-3xl;
+    @apply w-12;
+    @apply h-12;
+    @apply bg-green-500
+}
 </style>
