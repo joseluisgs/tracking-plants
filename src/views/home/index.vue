@@ -1,5 +1,11 @@
 <template>
   <div class="home custom-container">
+     <p v-if="user" class="pb-10">
+      Bienvenido,<br />
+      <span class="text-2xl font-bold text-red-main-400">
+        {{ user.displayName }}
+      </span>
+    </p>
     <RecentPlants
       :plants="recentPlants"
     />
