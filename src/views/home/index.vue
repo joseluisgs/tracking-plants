@@ -14,7 +14,7 @@
 // @ is an alias to /src
 import ListPlants from '@/views/home/components/ListPlants.vue';
 import RecentPlants from '@/views/home/components/RecentPlants.vue';
-import { mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'HomeView',
@@ -31,6 +31,9 @@ export default {
   // Mi ciclo de vida
   mounted() {
     this.loadData();
+  },
+  computed: {
+    ...mapState('auth', ['user']),
   },
   methods: {
     ...mapActions({

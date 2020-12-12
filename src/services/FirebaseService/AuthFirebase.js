@@ -9,6 +9,7 @@ export default {
   // https://firebase.google.com/docs/auth/web/password-auth?hl=es_419
   async login(email, password) {
     const res = await Auth.signInWithEmailAndPassword(email, password);
+    // console.log(res);
     return res.user;
   },
   // Realiza el Registro
@@ -28,5 +29,9 @@ export default {
   loginGoogle() {
     // provider.addScope('https://www.googleapis.com/auth/plus.login');
     return Auth.signInWithPopup(Service.providerGoogle);
+  },
+  // Devuelve el usuario actual
+  async getCurrentUser() {
+    return Auth.currentUser;
   },
 };

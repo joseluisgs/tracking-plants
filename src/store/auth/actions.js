@@ -14,7 +14,7 @@ export default {
   async loginUser({ commit }, { email, password }) {
     try {
       const user = await AuthService.login(email, password);
-      commit('setUser', user.user);
+      commit('setUser', user);
     } catch (error) {
       console.error(error);
     }
