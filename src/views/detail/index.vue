@@ -126,6 +126,9 @@ export default {
     loadWaterPlantsDates() {
       // es un array de singles dates
       // https://vcalendar.io/dates.html#single-dates
+      // this.plant.waterPlant.forEach((element) => {
+      //   console.log(element);
+      // });
       this.attrs = this.plant.waterPlant.map((date) => ({
         highlight: true,
         dates: new Date(date),

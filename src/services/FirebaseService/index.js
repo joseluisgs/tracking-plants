@@ -3,7 +3,7 @@
 import firebase from 'firebase/app'; // mejor que poner import firebase from 'firebase';
 // Firebase y sus servicios
 import 'firebase/firestore';
-// import 'firebase/auth';
+import 'firebase/auth';
 // import 'firebase/storage';
 import FirebaseConfig from './FirebaseConfig'; // Mejor para desplegar build
 
@@ -19,7 +19,7 @@ const defaultProject = firebase.initializeApp(firebaseConfig);
 // Elementos de Firebase a usar (Cargamos los que vayamos a usar)
 const db = firebase.firestore(); // Base de datos en tiempo real
 
-// const auth = firebase.auth(); // Autenticación
+const auth = firebase.auth(); // Autenticación
 // const storage = firebase.storage(); // Almacenamiento
 // Autenticación de Google, poner uno por método de identificación. Se deb eactivar en la consola de Firebase
 // const providerGoogle = new firebase.auth.GoogleAuthProvider();
@@ -37,7 +37,7 @@ console.log(`⚑ Firebase -> ${defaultProject.name} ✓`);
 // Exportamos lo que necesitemos
 export default {
   db,
-  // auth,
+  auth,
   // user,
   // storage,
   // providerGoogle,

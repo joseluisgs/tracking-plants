@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import plants from './plants';
+import plants from './plants/index';
+import auth from './auth/index';
 
 Vue.use(Vuex);
 
@@ -14,5 +15,6 @@ export default new Vuex.Store({
   // },
   modules: {
     plants,
+    auth,
   },
 });
