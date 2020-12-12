@@ -23,6 +23,11 @@ const routes = [
     props: true,
     component: () => import('@/views/detail/index.vue'),
   },
+  {
+    path: '/auth',
+    name: 'Auth',
+    component: () => import('@/views/auth/index.vue'),
+  },
   // {
   //   path: '/about',
   //   name: 'About',
