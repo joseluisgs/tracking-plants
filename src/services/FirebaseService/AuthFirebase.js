@@ -7,8 +7,9 @@ const Auth = Service.auth;
 export default {
   // Realiza el Login
   // https://firebase.google.com/docs/auth/web/password-auth?hl=es_419
-  login(data) {
-    return Auth.signInWithEmailAndPassword(data.email, data.password);
+  async login(email, password) {
+    const res = await Auth.signInWithEmailAndPassword(email, password);
+    return res.user;
   },
   // Realiza el Registro
   // https://firebase.google.com/docs/auth/web/manage-users?hl=es_419
